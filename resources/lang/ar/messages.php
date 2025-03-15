@@ -1,0 +1,21 @@
+<?php
+return [
+    'home' => 'الرئيسية',
+    'about' => 'حول',
+    'purchase' => 'شراء',
+    'login' => 'تسجيل الدخول',
+    'logout' => 'تسجيل الخروج',
+    'profile' => 'الملف الشخصي',
+    'appointment' => 'موعد',
+    'no_account' => 'ليس لديك حساب؟',
+    'create_account' => 'إنشاء حساب',
+    'name' => 'الاسم',
+    'email' => 'البريد الإلكتروني',
+    'city' => 'المدينة',
+    'select_country' => 'اختر الدولة',
+    'password' => 'كلمة المرور',
+    'confirm_password' => 'تأكيد كلمة المرور',
+    'register' => 'تسجيل',
+    'your_profile' => 'ملفك الشخصي',
+    'close' => 'إغلاق',
+];

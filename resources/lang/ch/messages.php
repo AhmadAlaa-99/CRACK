@@ -1,0 +1,21 @@
+<?php
+return [
+    'home' => '主页',
+    'about' => '关于',
+    'purchase' => '购买',
+    'login' => '登录',
+    'logout' => '登出',
+    'profile' => '个人资料',
+    'appointment' => '预约',
+    'no_account' => '没有账户？',
+    'create_account' => '创建账户',
+    'name' => '名称',
+    'email' => '电子邮件地址',
+    'city' => '城市',
+    'select_country' => '选择国家',
+    'password' => '密码',
+    'confirm_password' => '确认密码',
+    'register' => '注册',
+    'your_profile' => '你的个人资料',
+    'close' => '关闭',
+];
