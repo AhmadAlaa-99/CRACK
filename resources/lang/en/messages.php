@@ -24,7 +24,7 @@ return [
     'appointment' => 'Appointment',
     'name' => 'Name',
     'email' => 'Email',
-    'twitter'=>'twitter',
+    'twitter' => 'twitter',
     'close' => 'Close',
     'your_profile' => 'Your Profile',
     'Somalia' => 'Somalia',
@@ -69,7 +69,7 @@ return [
     'Belize' => 'Belize',
     // Add the rest of the countries...
     'Zimbabwe' => 'Zimbabwe',
-    
+
     //recommendations
     'recommend_1' => 'this software is copy righted to craxsratandroid.in ',
     'recommend_2' => 'this software is for only personal use.',
@@ -163,12 +163,12 @@ return [
     'purchase_personal_license' => 'You can purchase a license for use on a single personal device only and enjoy the features of CraxsRat. Contact support for assistance.',
     'purchase_personal_price' => 'The license price is $2000.',
     'purchase_custom_license' => 'You can purchase a customized version of the code, with modifications available upon request. Here’s how you can get CraxsRat:
-                            <br>you will receive:
-                            <br>A dedicated private server
-                            <br>A custom domain of your choice
-                            <br>A Wildcard SSL certificate
-                            <br>A dashboard to add, remove, or update clients
-                            <br>Full implementation and ongoing maintenance by me. You can create multiple accounts for your partners or friends if needed.',
+                            you will receive:
+                            A dedicated private server
+                            A custom domain of your choice
+                            A Wildcard SSL certificate
+                            A dashboard to add, remove, or update clients
+                            Full implementation and ongoing maintenance by me. You can create multiple accounts for your partners or friends if needed.',
     'purchase_custom_features' => 'A dedicated private server, custom domain, Wildcard SSL certificate, dashboard, and ongoing maintenance.',
     'purchase_custom_price' => 'For a one-time payment of $5,000',
     'purchase_full_source_code' => 'You can purchase the complete source code and start a new project',
@@ -186,4 +186,20 @@ return [
     'testimonial_client_name' => 'Client Name',
     'testimonial_client_profession' => 'Profession',
     'testimonial_client_feedback' => 'Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.',
+    'home' => 'Home',
+    'about' => 'About',
+    'purchase' => 'Purchase',
+    'login' => 'Login',
+    // ... other existing translations
+
+    // New OTP-related translations
+    'verify_your_email' => 'Verify Your Email',
+    'otp_sent_to_email' => 'A verification code has been sent to your email',
+    'verification_code' => 'Verification Code',
+    'verify' => 'Verify',
+    'didnt_receive_code' => 'Didn\'t receive the code?',
+    'resend_code' => 'Resend Code',
+    'otp_verification_notice' => 'A verification code will be sent to your email after clicking the register button',
+    'verification_code_will_be_sent' => 'A verification code will be sent to this email',
+
 ];
