@@ -21,6 +21,12 @@
                     <source src="{{ asset('videos/about_video.mp4') }}" type="video/mp4">
                     {{__('messages.carousel_browser_support')}}
         </video>
+        <!-- ?? ??? ??????? -->
+<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#videoModal">
+    Play
+</button>
+
+        
                     
                     </div>
                 </div>
@@ -53,5 +59,43 @@
         </div>
     </div>
     <!-- About Section End -->
+<!-- Modal ???? ??????? -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-dark">
+            <div class="modal-header border-0">
+          
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" onclick="pauseVideo()"></button>
+            </div>
+            <div class="modal-body text-center">
+                <video id="video1" class="w-100 rounded" controls>
+                    <source src="{{ asset('videos/about_video.mp4') }}" type="video/mp4">
+                    {{ __('messages.carousel_browser_support') }}
+                </video>
+            </div>
+          
+        </div>
+    </div>
+</div>
+@section('scripts')
+<script>
+    const video = document.getElementById('video1');
+
+    function toggleVideo() {
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    }
+
+    function pauseVideo() {
+        video.pause();
+    }
+
+    // ????? ??????? ??? ??? ???????
+    document.getElementById('videoModal').addEventListener('hidden.bs.modal', pauseVideo);
+</script>
+@endsection
 
 @endsection

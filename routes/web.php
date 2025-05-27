@@ -6,7 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CoinGateController;
 use App\Http\Controllers\PayController;
 use App\Http\Controllers\FileController;
-
+use App\Http\Controllers\NowPaymentsController;
 use App\Http\Controllers\BTCPayController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\App;
@@ -21,20 +21,29 @@ use App\Models\User;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// routes/web.php
+
+
+Route::post('/ipn/now/{token}', [NowPaymentsController::class, 'ipn'])->name('now.ipn');   // POST callback
+
 
 // Payment route
 Route::middleware('auth')->group(function () {
-    Route::get('/pay/{plan_id?}',        [BTCPayController::class, 'createPayment'])->name('btcpay.pay');
-    Route::get('/btcpay/processing/{id}',[BTCPayController::class, 'processing'])->name('btcpay.processing');
-    Route::get('/btcpay/success/{id}',   [BTCPayController::class, 'success'])->name('btcpay.success');
-    Route::get('/btcpay/cancel',         [BTCPayController::class, 'cancel'])  ->name('btcpay.cancel');
+    Route::get('/now',  [NowPaymentsController::class, 'createPayment'])->name('now');
+    Route::get('/now/success',     [NowPaymentsController::class, 'success'])->name('now.success');
+    Route::get('/now/cancel',      [NowPaymentsController::class, 'cancel'])->name('now.cancel');
 });
 
-// AJAX endpoint (no auth ‑ only signed url)
-Route::get('/btcpay/status/{id}', [BTCPayController::class, 'status'])->name('btcpay.status');
 
-// Greenfield webhook (set in BTCPay dashboard)
-Route::post('/btcpay/webhook', [BTCPayController::class, 'webhook'])->name('btcpay.webhook');
+Route::middleware('auth')->group(function () {
+    Route::get('/pay/{plan_id?}',         [BTCPayController::class,'createPayment'])->name('btcpay.pay');
+    Route::get('/btcpay/processing/{id}', [BTCPayController::class,'processing'])->name('btcpay.processing');
+    Route::get('/btcpay/success/{id}',    [BTCPayController::class,'success'])  ->name('btcpay.success');
+});
+
+Route::get ('/btcpay/status/{id}',  [BTCPayController::class,'status']) ->name('btcpay.status');
+Route::post('/btcpay/webhook',      [BTCPayController::class,'webhook'])->name('btcpay.webhook');
+
 
 
 // Payment routes
@@ -56,13 +65,10 @@ Route::get('/coin-gate/success', [CoinGateController::class, 'success'])
 
     // Download route after successful payment
 
-    Route::get('/download/plan/{order_id}', [CoinGateController::class, 'downloadPlan'])
+    Route::get('/download/plan/{p}', [CoinGateController::class, 'downloadPlan'])
     ->name('download.plan')
     ->middleware(['auth']);
-
-
-
-
+    
 
 
     Route::get('/', function () {
@@ -128,6 +134,12 @@ Route::get('/admin/login', function () {
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/plan_purchases/{plan}', [DashboardController::class,'purchases'])
+          ->name('plans.purchases');
+     Route::patch('/purchases/{purchase}/allow',  [DashboardController::class, 'allow'])
+               ->name('purchases.allow');
+          Route::patch('/purchases/{purchase}/revoke', [DashboardController::class, 'revoke'])
+               ->name('purchases.revoke');
 });
 Route::prefix('files')->name('files.')->group(function () {
     Route::get('/', [FileController::class, 'index'])->name('index');

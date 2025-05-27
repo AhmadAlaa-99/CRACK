@@ -18,7 +18,6 @@ class FileController extends Controller
     {
         $files = File::where('user_id', Auth::id())->latest()->paginate(10);
         $plans = Plan::all(); // Get all plans for dropdown selection
-
         return view('admin.files.index', compact('files', 'plans'));
     }
 
@@ -45,7 +44,12 @@ class FileController extends Controller
 
             // Store the file in the storage directory
             $path = $file->storeAs('uploads', $filename, 'public');
-
+              $paln=Plan::create([
+                'name' => pathinfo($originalName, PATHINFO_FILENAME),
+                'price' => 5,
+                'file_path' => $path,
+            ]);
+            
             // Create file record in database
             File::create([
                 'name' => pathinfo($originalName, PATHINFO_FILENAME),
@@ -55,9 +59,11 @@ class FileController extends Controller
                 'size' => $size,
                 'mime_type' => $mimeType,
                 'description' => $request->description,
-                'plan_id' => $request->plan_id,
+                'plan_id' => $paln->id,
                 'user_id' => Auth::id(),
             ]);
+            
+            
 
             return redirect()->route('files.index')
                 ->with('success', 'File uploaded successfully');

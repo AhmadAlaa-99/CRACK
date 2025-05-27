@@ -2,6 +2,7 @@
 return [
     'home' => 'Home',
     'about' => 'About',
+    'purchases'=>'Buy',
     'purchase' => 'Buy',
     'login' => 'Login',
     'logout' => 'Logout',
@@ -151,17 +152,20 @@ return [
     // Pricing Section
     'pricing_title' => 'encrypted injection apk',
     'pricing_live_alerts' => 'Live Alerts:',
-    'pricing_live_alerts_details' => '- you get alert directly from clients: screen on/off, active app now, etc.. enable/disable from controller at runtime.',
+    'pricing_live_alerts_details_1' => '- you get alert directly from clients:',
+     'pricing_live_alerts_details_2' => 'screen on/off, active app now, etc..',
+      'pricing_live_alerts_details_3' => 'enable/disable from controller at runtime.',
     'pricing_apk_builder' => 'Apk builder:',
-    'pricing_apk_builder_details' => '- Traking list: import/Export from file. speed up apk build process.',
+    'pricing_apk_builder_details_1' => '- Traking list: import/Export from file. ',
+    'pricing_apk_builder_details_2' => 'speed up apk build process.',
     'pricing_apk' => 'Apk:',
     'pricing_apk_details' => '- more apk encryption.',
 
     // Purchase Section
     'purchase_title' => 'Purchase',
     'purchase_choose_version' => 'Choose your version',
-    'purchase_personal_license' => 'You can purchase a license for use on a single personal device only and enjoy the features of CraxsRat. Contact support for assistance.',
-    'purchase_personal_price' => 'The license price is $2000.',
+    'purchase_personal_license' => 'You can purchase a license for use on a single personal device only and enjoy the features of CraxsRat',
+    'purchase_personal_price' => 'The price of this license 1510$',
     'purchase_custom_license' => 'You can purchase a customized version of the code, with modifications available upon request. Here’s how you can get CraxsRat:
                             you will receive:
                             A dedicated private server
@@ -171,14 +175,14 @@ return [
                             Full implementation and ongoing maintenance by me. You can create multiple accounts for your partners or friends if needed.',
     'purchase_custom_features' => 'A dedicated private server, custom domain, Wildcard SSL certificate, dashboard, and ongoing maintenance.',
     'purchase_custom_price' => 'For a one-time payment of $5,000',
-    'purchase_full_source_code' => 'You can purchase the complete source code and start a new project',
-    'purchase_full_source_code_price' => 'for $9,000.',
+    'purchase_full_source_code' => 'You can purchase the complete source code',
+    'purchase_full_source_code_price' => 'for 9020$',
 
     // Working Hours Section
-    'working_hours_title' => 'Working Hours',
-    'working_hours_description' => 'Professional Barbers Are Waiting For You',
+    'working_hours_title' => 'User Dashboard',
+    'working_hours_description' => 'Number of customers who purchased CRAXSRAT since our site launch',
     'working_hours_website_users' => 'Website Users',
-    'working_hours_purchases' => 'Purchases',
+    'working_hours_purchases' => 'Number of customers who purchased CRAXSRAT since our site launch',
 
     // Testimonial Section
     'testimonial_title' => 'Testimonial',

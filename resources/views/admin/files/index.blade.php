@@ -10,10 +10,12 @@
                     <div class="card-header bg-secondary">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="mb-0">File Management</h4>
+                            <!--
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#uploadModal">
                                 <i class="fas fa-upload me-1"></i> Upload New File
                             </button>
+                            -->
                         </div>
                     </div>
                     <div class="card-body">
@@ -88,7 +90,7 @@
                                                         <i class="fas {{ $iconClass }} fa-2x text-danger"></i>
                                                     </div>
                                                     <div>
-                                                        <h6 class="mb-0">{{ $file->name }}</h6>
+                                                        <h6 class="mb-0">{{ $file->description }}</h6>
                                                         <small
                                                             class="text-muted">{{ Str::limit($file->description, 30) }}</small>
                                                     </div>
@@ -99,7 +101,7 @@
                                                 <div class="small">{{ strtoupper($file->extension) }}</div>
                                             </td>
                                             <td>
-                                                {{ $file->plan ? $file->plan->name : 'No Plan' }}
+                                                {{ $file->description }}
                                             </td>
                                             <td>
                                                 {{ $file->created_at->format('M d, Y') }}
@@ -107,15 +109,18 @@
                                             </td>
                                             <td>
                                                 <div class="btn-group">
+                                                <!--
                                                     <button type="button" class="btn btn-sm btn-info view-file"
                                                         data-bs-toggle="modal" data-bs-target="#viewModal"
                                                         data-file-id="{{ $file->id }}">
                                                         <i class="fas fa-eye"></i>
                                                     </button>
+                                                    -->
                                                     <a href="{{ route('files.download', $file) }}"
                                                         class="btn btn-sm btn-primary">
                                                         <i class="fas fa-download"></i>
                                                     </a>
+                                                    <!--
                                                     <button type="button" class="btn btn-sm btn-warning edit-file"
                                                         data-bs-toggle="modal" data-bs-target="#editModal"
                                                         data-file-id="{{ $file->id }}">
@@ -127,6 +132,16 @@
                                                         data-file-name="{{ $file->name }}">
                                                         <i class="fas fa-trash"></i>
                                                     </button>
+                                                    -->
+                                                    
+                                                    <a href="{{ route('plans.purchases', ['plan' => $file->plan_id]) }}" class="btn btn-info mt-2">
+
+   Purchaces
+</a>
+
+
+
+
                                                 </div>
                                             </td>
                                         </tr>
@@ -179,15 +194,7 @@
                             <label for="description" class="form-label">Description</label>
                             <textarea class="form-control bg-secondary text-white" id="description" name="description" rows="3"></textarea>
                         </div>
-                        <div class="mb-3">
-                            <label for="plan_id" class="form-label">Associate with Plan (Optional)</label>
-                            <select class="form-control bg-secondary text-white" id="plan_id" name="plan_id">
-                                <option value="">None</option>
-                                @foreach ($plans as $plan)
-                                    <option value="{{ $plan->id }}">{{ $plan->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                      
                     </div>
                     <div class="modal-footer border-top border-secondary">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -267,15 +274,7 @@
                             <label for="edit-description" class="form-label">Description</label>
                             <textarea class="form-control bg-secondary text-white" id="edit-description" name="description" rows="3"></textarea>
                         </div>
-                        <div class="mb-3">
-                            <label for="edit-plan_id" class="form-label">Associate with Plan (Optional)</label>
-                            <select class="form-control bg-secondary text-white" id="edit-plan_id" name="plan_id">
-                                <option value="">None</option>
-                                @foreach ($plans as $plan)
-                                    <option value="{{ $plan->id }}">{{ $plan->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                        
                     </div>
                     <div class="modal-footer border-top border-secondary">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Purchase;
 
 class Plan extends Model
 {
@@ -21,5 +22,9 @@ class Plan extends Model
     {
         return $this->hasMany(Payment::class);
     }
+    public function purchases()
+{
+    return $this->hasMany(Purchase::class);
+}
 }
 

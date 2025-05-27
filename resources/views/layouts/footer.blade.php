@@ -11,14 +11,15 @@
                     <span>{{__('messages.telegram')}}</span>
                     </a>
                 </div>
-                <div class="d-flex align-items-center mb-2">
-                    <a href="haxsupport@craxsratandroid.in" style="color:white; display: flex !important;">
-                    <div class="btn-square bg-dark flex-shrink-0 me-3">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <span>{{__('messages.email')}}</span>
-                    </a>
-                </div>
+             <div class="d-flex align-items-center mb-2">
+    <a href="mailto:Craxsratsupprt@craxsratandroid.in" style="color:white; display: flex !important;">
+        <div class="btn-square bg-dark flex-shrink-0 me-3">
+            <i class="fas fa-envelope"></i>
+        </div>
+        <span>{{__('messages.email')}}</span>
+    </a>
+</div>
+
                 <div class="d-flex align-items-center mb-2">
                 <a href="#" style="color:white; display: flex !important;">
                     <div class="btn-square bg-dark flex-shrink-0 me-3">
@@ -53,7 +54,7 @@
             <div class="col-lg-4 col-md-6">
                 <h4 class="text-uppercase mb-4">{{__('messages.newsletter')}}</h4>
                 <div class="position-relative mb-4">
-                    <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                    <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Craxsratsupprt@craxsratandroid.in">
                     <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">{{__('messages.signup')}}</button>
                 </div>
                 <div class="d-flex pt-1 m-n1">

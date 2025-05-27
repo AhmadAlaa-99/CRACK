@@ -1,0 +1,328 @@
+{
+    "id": "94515a21-33e1-4e20-da9c-08dd8b9eb9e3",
+    "offerType": 0,
+    "isPercentage": false,
+    "offerValue": 10,
+    "offerPercentage": 0,
+    "minValue": 10,
+    "maxVlaue": 10,
+    "itemCatalogueCategorys": [],
+    "contributionType": 1,
+    "contributionWheelsValue": 100,
+    "contributionBusinessEntityValue": null,
+    "bankIds": [
+        {
+            "name": "يورا",
+            "value": 1
+        },
+        {
+            "name": "بنك أتسيفون أميركا",
+            "value": 2
+        },
+        {
+            "name": "بنك أتسيفون أميركا",
+            "value": 3
+        },
+        {
+            "name": "بنك يهب لعمال الدولة",
+            "value": 4
+        },
+        {
+            "name": "بنك أدونيم",
+            "value": 6
+        },
+        {
+            "name": "بنك التطوير والصناعة",
+            "value": 7
+        },
+        {
+            "name": "بنك هسنفنوتي لاسرائيل",
+            "value": 8
+        },
+        {
+            "name": "بنك البريد",
+            "value": 9
+        },
+        {
+            "name": "بنك لئومي",
+            "value": 10
+        },
+        {
+            "name": "بنك ديسكونت",
+            "value": 11
+        },
+        {
+            "name": "بنك هبوعليم",
+            "value": 12
+        },
+        {
+            "name": "بنك الاتحاد الاسرائيلي",
+            "value": 13
+        },
+        {
+            "name": "بنك اوتسار هخيال المحدود",
+            "value": 14
+        },
+        {
+            "name": "بنك ميرسنتل ديسكونت",
+            "value": 17
+        },
+        {
+            "name": "بنك حكلئوت",
+            "value": 19
+        },
+        {
+            "name": "بنك مزراحي الموحد",
+            "value": 20
+        },
+        {
+            "name": "بنك استراليا نيوزيلاند",
+            "value": 21
+        },
+        {
+            "name": "بنك اسرائيل الامريكي",
+            "value": 24
+        },
+        {
+            "name": "بنك كليلي لاسرائيل",
+            "value": 26
+        },
+        {
+            "name": "بنك الرفاة لتمويل المشاريع الصغيرة",
+            "value": 27
+        },
+        {
+            "name": "بنك كونتننتل لاسرائيل",
+            "value": 28
+        },
+        {
+            "name": "بنك لمسحار المحدود",
+            "value": 30
+        },
+        {
+            "name": "بنك هبن لئومي هريشون",
+            "value": 31
+        },
+        {
+            "name": "بنك لميمون ولسحر",
+            "value": 32
+        },
+        {
+            "name": "بنك مركنتيل لاسرائيل",
+            "value": 33
+        },
+        {
+            "name": "البنك العربي الاسرائيلي",
+            "value": 34
+        },
+        {
+            "name": "بنك الاردن",
+            "value": 37
+        },
+        {
+            "name": "البنك التجاري الفلسطيني",
+            "value": 38
+        },
+        {
+            "name": "البنك الاهلي الاردني",
+            "value": 43
+        },
+        {
+            "name": "بنك ايتان لكودوم",
+            "value": 44
+        },
+        {
+            "name": "بنك مساد المحدود",
+            "value": 46
+        },
+        {
+            "name": "بنك كوبات اشراي وحسخون",
+            "value": 47
+        },
+        {
+            "name": "بنك كوبات عوفيد هلئومي",
+            "value": 48
+        },
+        {
+            "name": "البنك العربي",
+            "value": 49
+        },
+        {
+            "name": "بنك بوعلي اجودات اسرائيل",
+            "value": 52
+        },
+        {
+            "name": "بنك عليا لئومي",
+            "value": 53
+        },
+        {
+            "name": "بنك القدس للاسكان",
+            "value": 54
+        },
+        {
+            "name": "بنك الصناعة",
+            "value": 55
+        },
+        {
+            "name": "بنك لئومي وهشكعوت",
+            "value": 58
+        },
+        {
+            "name": "بنك الاقصى الاسلامي",
+            "value": 62
+        },
+        {
+            "name": "بنك القاهرة عمان",
+            "value": 66
+        },
+        {
+            "name": "البنك العقاري العربي",
+            "value": 67
+        },
+        {
+            "name": "بنك الاردن والخليج",
+            "value": 71
+        },
+        {
+            "name": "بنك عيدود",
+            "value": 72
+        },
+        {
+            "name": "البنك الاسلامي العربي الدولي",
+            "value": 73
+        },
+        {
+            "name": "البنك البريطاني للشرق الاوسط",
+            "value": 74
+        },
+        {
+            "name": "بنك الاستثمار الفلسطيني",
+            "value": 76
+        },
+        {
+            "name": "بنك لئومي لقروض الاسكان",
+            "value": 77
+        },
+        {
+            "name": "البنك الرئيسي للتنمية والائتمان",
+            "value": 78
+        },
+        {
+            "name": "بنك اي اند زد جرندلز",
+            "value": 79
+        },
+        {
+            "name": "بنك تفحوت لمشكنوت",
+            "value": 80
+        },
+        {
+            "name": "البنك الاسلامي الفلسطيني",
+            "value": 81
+        },
+        {
+            "name": "بنك القدس للتنمية والاستثمار",
+            "value": 82
+        },
+        {
+            "name": "بنك الاتحاد للادخار والاستثمار",
+            "value": 83
+        },
+        {
+            "name": "بنك الاسكان للتجارة والتمويل",
+            "value": 84
+        },
+        {
+            "name": "بنك يعسور لمشكنوت",
+            "value": 85
+        },
+        {
+            "name": "بنك الكرمل لمشكنوت",
+            "value": 86
+        },
+        {
+            "name": "بنك فلسطين الدولي",
+            "value": 87
+        },
+        {
+            "name": "بنك فلسطين المحدود",
+            "value": 89
+        },
+        {
+            "name": "بنك لفتوح لمشكنوت",
+            "value": 90
+        },
+        {
+            "name": "بنك هبوعليم لمشكنوت",
+            "value": 91
+        },
+        {
+            "name": "البنك الاردني الكويتي",
+            "value": 93
+        },
+        {
+            "name": "بنك عتسميئوت لمشكنوت",
+            "value": 94
+        },
+        {
+            "name": "بنك اسرائيل",
+            "value": 99
+        }
+    ],
+    "coustomerCriteria": [
+        {
+            "key": 0,
+            "valueType": 3,
+            "value": "598888888",
+            "sequence": "PhoneNumber,0"
+        },
+        {
+            "key": 44,
+            "valueType": 10,
+            "value": "2",
+            "sequence": "PhoneNumber,0"
+        }
+    ],
+    "fromDate": "2025-04-30T21:00:00.000Z",
+    "toDate": "2025-05-30T21:00:00.000Z",
+    "promoCode": "0znGA",
+    "isAuto": false,
+    "Restaurant": [],
+    "subscriptionDuration": 0,
+    "nextSubscription": 0,
+    "subscriptionAllowCount": 6,
+    "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+    ],
+    "offerCategory": 0,
+    "isTemplate": false,
+    "hours": [
+        {
+            "id": null,
+            "fromHour": "4:32 ص",
+            "toHour": "9:33 م",
+            "offerId": "94515a21-33e1-4e20-da9c-08dd8b9eb9e3"
+        }
+    ],
+    "offerGoals": [],
+    "offerLocations": [
+        {
+            "id": null,
+            "offerId": "94515a21-33e1-4e20-da9c-08dd8b9eb9e3",
+            "governorateId": 11,
+            "governorateName": "الخليل",
+            "areaId": null,
+            "areaName": null,
+            "fromAreaId": null,
+            "fromAreaName": null,
+            "toAreaId": null,
+            "toAreaName": null,
+            "looctionType": 0
+        }
+    ]
+}

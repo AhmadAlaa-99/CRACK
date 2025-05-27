@@ -4,7 +4,7 @@
 
 @section('content')
     <style>
-        .dot {
+  .dot {
             width: 10px;
             height: 10px;
             background-color: #ccc;
@@ -52,6 +52,20 @@
         }
     </style>
     <!-- Carousel Start -->
+    @if(session('error'))
+    <div class="alert alert-danger alert-dismissible fade show position-fixed bottom-0 end-0 m-4 shadow" role="alert" style="z-index:9999; min-width: 300px;">
+        {{ session('error') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
+@if(session('info'))
+    <div class="alert alert-info alert-dismissible fade show position-fixed bottom-0 end-0 m-4 shadow" role="alert" style="z-index:9999; min-width: 300px;">
+        {{ session('info') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
     <div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -405,7 +419,7 @@
 
 
     <!-- Team Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-5" id="pricing-section">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="d-inline-block bg-secondary text-primary py-1 px-4">{{ __('messages.purchase') }}</p>
@@ -413,22 +427,41 @@
             </div>
             <div class="row g-4">
                 <!-- Card 1 -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item">
                         <div class="team-img position-relative overflow-hidden">
                             <img class="img-fluid" src="img/web_2.jpg" alt="">
                             <div class="team-social">
-                                <a class="btn btn-square" href="{{ route('btcpay.pay', ['plan_id' => 1]) }}"
-                            ><i class="fa fa-share"></i></a>
+                           @php
+    $orderId = \Illuminate\Support\Str::uuid()->toString();
+    Cache::put("order:$orderId", ['status' => 'processing', 'plan' => ['name' => 'USDT Plan']], now()->addHours(1));
+@endphp
+
+<a href="{{ route('now', ['plan_id' => 1]) }}" class="btn btn-secondary">
+    Download Now
+</a>
+<!--
+<a href="{{ route('btcpay.pay', ['plan_id' => 1]) }}" class="btn btn-primary">
+    ������ الدفع بالبيتكوين (BTC)
+</a> -->
+
                             </div>
                         </div>
                         <div class="bg-secondary text-center p-4" style="min-height: 200px; overflow-y: auto;">
                             <h5 class="text-uppercase">{{ __('messages.purchase_personal_license') }}</h5>
-                            <span class="text-primary">{{ __('messages.purchase_personal_price') }}</span>
+                         
+                            
+                            
+<span class="text-primary" style="font-size: 2rem; margin-right: 10px;">
+    {{ __('messages.purchase_personal_price') }}
+</span>
+<span style="text-decoration: line-through; color: #888; font-size: 1.5rem;">2000$</span>
+
+
                         </div>
                     </div>
                 </div>
-                <!-- Card 2 -->
+                <!-- Card 2
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="team-img position-relative overflow-hidden">
@@ -439,22 +472,40 @@
                         </div>
                         <div class="bg-secondary text-start p-4" style="max-height: 200px; overflow-y: auto;">
                             <h5 class="text-uppercase">{{ __('messages.purchase_custom_license') }}</h5>
-                            <span class="text-primary">{{ __('messages.purchase_custom_price') }}</span>
+                         <span style="text-decoration: line-through; color: #888; font-size: 1.5rem;">2000$</span>
+<span class="text-primary" style="font-size: 2rem; margin-right: 10px;">
+    {{ __('messages.purchase_custom_price') }}
+</span>
+
                         </div>
                     </div>
                 </div>
+                -->
                 <!-- Card 3 -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="team-item">
                         <div class="team-img position-relative overflow-hidden">
                             <img class="img-fluid" src="img/web_1.jpg" alt="">
                             <div class="team-social">
-                                <a class="btn btn-square" href="{{ route('pay') }}"><i class="fa fa-share"></i></a>
+                           @php
+    $orderId = \Illuminate\Support\Str::uuid()->toString();
+    Cache::put("order:$orderId", ['status' => 'processing', 'plan' => ['name' => 'USDT Plan']], now()->addHours(1));
+@endphp
+
+<a href="{{ route('now', ['plan_id' => 2]) }}" class="btn btn-secondary">
+   Download Now
+</a>
+<!--
+<a href="{{ route('btcpay.pay', ['plan_id' => 1]) }}" class="btn btn-primary">
+    ������ الدفع بالبيتكوين (BTC)
+</a> -->
+
                             </div>
                         </div>
                         <div class="bg-secondary text-center p-4" style="min-height: 200px; overflow-y: auto;">
                             <h5 class="text-uppercase">{{ __('messages.purchase_full_source_code') }}</h5>
-                            <span class="text-primary">{{ __('messages.purchase_full_source_code_price') }}</span>
+                            <span class="text-primary" style="    font-size: 2rem;" >{{ __('messages.purchase_full_source_code_price') }}</span>
+                            <span style="text-decoration: line-through; color: #888; font-size: 1.5rem;">10000$</span>
                         </div>
                     </div>
                 </div>
@@ -482,12 +533,16 @@
                         <div>
                             <div class="d-flex justify-content-between border-bottom py-2">
                                 <h6 class="text-uppercase mb-0">{{ __('messages.working_hours_website_users') }}</h6>
-                                <span class="text-uppercase">{{ $visitors }}</span>
+                                <span style="color:#black;     color: azure; "class="text-uppercase">{{ $visitors }}</span>
                             </div>
+                            <!--
+                        
                             <div class="d-flex justify-content-between border-bottom py-2">
                                 <h6 class="text-uppercase mb-0">{{ __('messages.working_hours_purchases') }}</h6>
-                                <span class="text-uppercase">{{ $users - 1 }}</span>
+                                <span style="color:#black;     color: azure;"class="text-uppercase">{{ $users - 1 }}</span>
                             </div>
+                            -->
+                        
                         </div>
                     </div>
                 </div>
@@ -541,11 +596,14 @@
             </div>
             <center>
                 <div class="d-flex pt-1 m-n1 justify-content-center">
-                    <a class="btn btn-lg-square btn-dark text-primary m-1" href="https://t.me/craxsosp"><i
+                    <a class="btn btn-lg-square btn-dark text-primary m-1" href="https://t.me/HAXSupport"><i
                             class="fab fa-telegram"></i></a>
-                    <a class="btn btn-lg-square btn-dark text-primary m-1" href="#"><i
-                            class="fab fa-instagram"></i></a>
-                    <a class="btn btn-lg-square btn-dark text-primary m-1" href="#"><i
+                            
+                    <a class="btn btn-lg-square btn-dark text-primary m-1" href="https://x.com/HAXSUPPOR"><i
+                            class="fab fa-twitter"></i></a>
+                            
+                            
+                    <a class="btn btn-lg-square btn-dark text-primary m-1" href="https://www.facebook.com/HAXSUPPOR/"><i
                             class="fab fa-facebook"></i></a>
                 </div>
             </center>
@@ -632,4 +690,14 @@
             alert("Popup blocked! Please allow popups for this site.");
         }
     }
+</script>
+<script>
+    // إخفاء التنبيه بعد 6 ثوانٍ تلقائيًا
+    setTimeout(function () {
+        const alertNode = document.querySelector('.alert');
+        if (alertNode) {
+            alertNode.classList.remove('show');
+            alertNode.classList.add('hide');
+        }
+    }, 6000);
 </script>

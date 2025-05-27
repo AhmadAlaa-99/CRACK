@@ -67,7 +67,7 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <a href="{{ route('index') }}" class="nav-item nav-link @yield('active-home', '')">{{ __('messages.home') }}</a>
             <a href="{{ route('about') }}" class="nav-item nav-link @yield('active-about', '')">{{ __('messages.about') }}</a>
-            <a href="{{ route('pay') }}" class="nav-item nav-link @yield('active-service', '')">{{ __('messages.purchase') }}</a>
+            <a href="#pricing-section" class="nav-item nav-link @yield('active-service', '')">{{ __('messages.purchases') }}</a>
 
 
             <!-- Authentication Links -->

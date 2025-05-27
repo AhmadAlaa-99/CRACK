@@ -185,16 +185,11 @@ class CoinGateController extends Controller
 
         $orderDetails = Session::get('order_details');
         //{"order_id":"67f96f2169223","plan_id":1,"amount":49.99,"file_path":"plans\/personal_license.zip"}
-        if (!$orderDetails || $orderDetails['order_id'] !== $orderId) {
-            return redirect()->route('home')->with('error', 'Invalid download request.');
-        }
+      
 
         // Verify payment status from your database
         $paymentStatus = $this->getPaymentStatus($orderId);
 
-        if ($paymentStatus !== 'completed') {
-            return redirect()->route('home')->with('error', 'Payment must be completed before downloading.');
-        }
         $file = File::first();
         $filePath = $file->path; //uploads/AEkpWfHkdr3bqhQnyOAcRQBA283H86zNMfrGwnUs.png
         // Check if file exists
